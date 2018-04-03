@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableWithoutFeedback, NativeModules } from "react-native";
+import { NativeModules } from "react-native";
 import PropTypes from "prop-types";
 
 import Player from "./brightcove-player";
@@ -18,7 +18,6 @@ class BrightcoveVideo extends Component {
     super(props);
 
     this.state = {
-      isLaunched: props.autoplay,
       error: null
     };
 
@@ -32,7 +31,6 @@ class BrightcoveVideo extends Component {
   // this is so we don't keep reseting our player reference
   shouldComponentUpdate(nextProps, nextState) {
     return (
-      nextState.isLaunched !== this.state.isLaunched ||
       nextState.error !== this.state.error ||
       nextProps !== this.props
     );
@@ -51,8 +49,6 @@ class BrightcoveVideo extends Component {
       if (this.playerRef) {
         this.playerRef.play();
       }
-
-      this.setState({ isLaunched: true });
     }
   }
 
@@ -63,7 +59,7 @@ class BrightcoveVideo extends Component {
   }
 
   reset() {
-    this.setState({ isLaunched: false, error: null });
+    this.setState({ error: null });
   }
 
   handleFinish() {
@@ -87,26 +83,15 @@ class BrightcoveVideo extends Component {
       return <VideoError {...this.props} onReset={this.reset} />;
     }
 
-    if (this.state.isLaunched) {
-      return (
-        <Player
-          ref={ref => {
-            this.playerRef = ref;
-          }}
-          {...this.props}
-          onError={this.handleError}
-          onFinish={this.handleFinish}
-          autoplay
-        />
-      );
-    }
-
     return (
-      <TouchableWithoutFeedback onPress={this.play}>
-        <View style={{ width: this.props.width, height: this.props.height }}>
-          <Splash {...this.props} />
-        </View>
-      </TouchableWithoutFeedback>
+      <Player
+        ref={ref => {
+          this.playerRef = ref;
+        }}
+        {...this.props}
+        onError={this.handleError}
+        onFinish={this.handleFinish}
+      />
     );
   }
 }
