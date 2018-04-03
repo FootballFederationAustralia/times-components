@@ -134,6 +134,7 @@ const RenderArticle = ({
       onRelatedArticlePress={preventDefaultedAction("onRelatedArticlePress")}
       onAuthorPress={preventDefaultedAction("onAuthorPress")}
       onVideoPress={preventDefaultedAction("onVideoPress")}
+      onLinkPress={preventDefaultedAction("onLinkPress")}
     />
   );
 };
@@ -166,6 +167,7 @@ storiesOf("Pages/Article", module)
               "onRelatedArticlePress"
             )}
             onAuthorPress={preventDefaultedAction("onAuthorPress")}
+            onLinkPress={preventDefaultedAction("onLinkPress")}
           />
         )}
       </ArticleProvider>
