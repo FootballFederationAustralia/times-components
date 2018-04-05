@@ -13,7 +13,7 @@
 RCT_EXPORT_MODULE(BrightcoveFullscreenPlayer);
 
 RCT_EXPORT_METHOD(playVideo:(NSDictionary *)video) {
-    
+
     __weak RNTBrightcoveFullscreenManager *weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf presentFullscreenVideo: video];
@@ -21,30 +21,31 @@ RCT_EXPORT_METHOD(playVideo:(NSDictionary *)video) {
 }
 
 - (void)presentFullscreenVideo:(NSDictionary *)video {
-    
+
     RNTBrightcoveView* brightcoveView = [[RNTBrightcoveView alloc] initWithEventDispatcher:nil];
-    
+  [[RNTBrightcoveVideoEventSignal allocWithZone: nil] onPlay];
+  
     brightcoveView.translatesAutoresizingMaskIntoConstraints = NO;
-    
+
     brightcoveView.videoId = video[@"videoId"];
     brightcoveView.accountId = video[@"accountId"];
     brightcoveView.policyKey = video[@"policyKey"];
     brightcoveView.autoplay = YES;
     brightcoveView.hideFullScreenButton = YES;
-    
+
     self.videoContainerViewController = [RNTBrightcoveViewController new];
     [self.videoContainerViewController addVideoView: brightcoveView];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(brightcoveView);
-    
+
     NSArray* horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[brightcoveView]|" options: 0 metrics: nil views: views];
     NSArray* verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[brightcoveView]|" options: 0 metrics: nil views: views];
-    
+
     [self.videoContainerViewController.view addConstraints:horizontalConstraints];
     [self.videoContainerViewController.view addConstraints:verticalConstraints];
-    
+
     [[self rootViewController] presentViewController:self.videoContainerViewController animated:YES completion:nil];
-    
+
 }
 
 - (UIViewController *)rootViewController {

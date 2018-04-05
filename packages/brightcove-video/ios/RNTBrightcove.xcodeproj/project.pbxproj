@@ -15,6 +15,7 @@
 		870C5C8D1F99E57F00092A65 /* RNTBrightcoveFullscreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 870C5C811F99E57F00092A65 /* RNTBrightcoveFullscreenManager.m */; };
 		870C5C8E1F99E57F00092A65 /* RNTBrightcoveCloseButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 870C5C861F99E57F00092A65 /* RNTBrightcoveCloseButtonView.m */; };
 		870C5C8F1F99E57F00092A65 /* RNTFullscreenAutoPresentingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 870C5C871F99E57F00092A65 /* RNTFullscreenAutoPresentingView.m */; };
+		8B97CCFE2075C2F500427647 /* RNTBrightcoveVideoEventSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B97CCFD2075C2F500427647 /* RNTBrightcoveVideoEventSignal.m */; };
 		9DF2A7AC1F27EB3A0015AC73 /* RNTBrightcoveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2A7AA1F27EB3A0015AC73 /* RNTBrightcoveManager.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		870C5C851F99E57F00092A65 /* RNTBrightcoveFullscreenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTBrightcoveFullscreenManager.h; sourceTree = "<group>"; };
 		870C5C861F99E57F00092A65 /* RNTBrightcoveCloseButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTBrightcoveCloseButtonView.m; sourceTree = "<group>"; };
 		870C5C871F99E57F00092A65 /* RNTFullscreenAutoPresentingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTFullscreenAutoPresentingView.m; sourceTree = "<group>"; };
+		8B97CCFC2075C2F500427647 /* RNTBrightcoveVideoEventSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTBrightcoveVideoEventSignal.h; sourceTree = "<group>"; };
+		8B97CCFD2075C2F500427647 /* RNTBrightcoveVideoEventSignal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTBrightcoveVideoEventSignal.m; sourceTree = "<group>"; };
 		9DF2A79B1F27EB1B0015AC73 /* libRNTBrightcove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTBrightcove.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF2A7A91F27EB3A0015AC73 /* RNTBrightcoveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTBrightcoveManager.h; sourceTree = "<group>"; };
 		9DF2A7AA1F27EB3A0015AC73 /* RNTBrightcoveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTBrightcoveManager.m; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				870C5C7A1F99E57F00092A65 /* RNTFullscreenPresentingAutoRotatingViewController.m */,
 				9DF2A7A91F27EB3A0015AC73 /* RNTBrightcoveManager.h */,
 				9DF2A7AA1F27EB3A0015AC73 /* RNTBrightcoveManager.m */,
+				8B97CCFC2075C2F500427647 /* RNTBrightcoveVideoEventSignal.h */,
+				8B97CCFD2075C2F500427647 /* RNTBrightcoveVideoEventSignal.m */,
 			);
 			path = RNTBrightcove;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			files = (
 				870C5C8D1F99E57F00092A65 /* RNTBrightcoveFullscreenManager.m in Sources */,
 				870C5C8B1F99E57F00092A65 /* RNTBrightcoveViewController.m in Sources */,
+				8B97CCFE2075C2F500427647 /* RNTBrightcoveVideoEventSignal.m in Sources */,
 				870C5C8F1F99E57F00092A65 /* RNTFullscreenAutoPresentingView.m in Sources */,
 				870C5C8C1F99E57F00092A65 /* RNTBrightcoveManager.m in Sources */,
 				870C5C8A1F99E57F00092A65 /* RNTFullscreenPresentingAutoRotatingViewController.m in Sources */,
